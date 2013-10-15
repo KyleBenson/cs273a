@@ -183,32 +183,23 @@ I would recommend choosing $K=32$ since the MSE appears to increase for the test
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection*{Problem 4: Decision Trees}
+
+\begin{enumerate}[(a)]
+	\item Done
+	
+	\item
+		\begin{figure}[H] \centering
+		\includegraphics[width=6.5in]{\figdir/prob4} \\
+		\end{figure}
+		
+	\item For 2 features, I would choose to limit the depth to 3.  After several runs, very few seem to improve the misclassification rate beyond a depth of 3 and many runs seem to actually worsen the misclassification rate beyond a depth of 3. Here, the test error comes to around 0.27.
+
+	\item For 4 features, I would choose to limit the depth to 3.  Similarly to the 2 feature case, few runs seem to improve beyond this depth.
+Although very few runs actually get worse beyond this depth, many of them show an improvement between depth 2 and 3, so the extra complexity seems to usually be worth it.  Here, the test error comes to between 0 and 0.1.
+
+\end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-I used the following code to store the normalized data in \texttt{d.norm\_data}:\\
-\begin{lstlisting}
- d.data = iris(:,1:end-1);     % extract data
- d.mean = mean(d.data)
- d.stdev = std(d.data)
- d.norm_data = bsxfun(@minus, d.data, d.mean) % subtract mean
- d.norm_data = bsxfun(@rdivide, d.norm_data, d.stdev) % divide by stdev
-\end{lstlisting}
-
-%\item Using different values in the line \\
-%\texttt{scatter(iris(iris(:,5)==target,1), iris(iris(:,5)==target,feat), [color '.'])},
-%I got the following plots:
-%\begin{figure}[h!] \centering
-%\begin{tabular}{ccc}
-%\includegraphics[width=.22\textwidth]{\figdir/iris-feature-scatter-1v2} &
-%\includegraphics[width=.22\textwidth]{\figdir/iris-feature-scatter-1v3} &
-%\includegraphics[width=.22\textwidth]{\figdir/iris-feature-scatter-1v4} \\
-%1v2 & 1v3 & 1v4
-%\end{tabular}
-%\end{figure}
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
 
 \end{document}
