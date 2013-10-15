@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mltools/!svn/ver/2/@gaussBayesClassify
+END
+gaussBayesClassify.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/mltools/!svn/ver/1/@gaussBayesClassify/gaussBayesClassify.m
+END
+mse.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mltools/!svn/ver/1/@gaussBayesClassify/mse.m
+END
+display.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mltools/!svn/ver/1/@gaussBayesClassify/display.m
+END
+predictSoft.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mltools/!svn/ver/5/@gaussBayesClassify/predictSoft.m
+END
+err.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mltools/!svn/ver/1/@gaussBayesClassify/err.m
+END
+auc.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mltools/!svn/ver/5/@gaussBayesClassify/auc.m
+END
+predict.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mltools/!svn/ver/5/@gaussBayesClassify/predict.m
+END
+covars.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mltools/!svn/ver/2/@gaussBayesClassify/covars.m
+END
+train.m
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mltools/!svn/ver/2/@gaussBayesClassify/train.m
+END
+mae.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mltools/!svn/ver/1/@gaussBayesClassify/mae.m
+END
+means.m
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mltools/!svn/ver/2/@gaussBayesClassify/means.m
+END
+confusion.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/mltools/!svn/ver/5/@gaussBayesClassify/confusion.m
+END
