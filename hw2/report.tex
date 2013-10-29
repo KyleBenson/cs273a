@@ -114,12 +114,38 @@ Entropy $H(y|x_i = 0)$ & 1 & 0.4312 & 1.03 & 0.931 & 0.887 \\
 \hline
 Entropy $H(y|x_i = 1)$ & 0.811 & 0.22 & 0.701 & 0.72 & 1.028 \\
 \hline
-Info Gain &  \\
+Info Gain & 0.0465 & 0.61 & 0.006 & 0.0914 & 0.006 \\
 \hline
 \end{tabular}
-\\ Therefore, we should split on feature $x_?$ first.
+\\ Therefore, we should split on feature $x_2$ first.
 
-%\item \includegraphics{problem2_tree}
+\item After splitting on $x_2$, we recompute the following info gains for each of the remaining features: \\
+$H(y|x_2=0) = 0.722$ \\
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+$Variable$ & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ \\
+\hline
+Info Gain & 0.322 & - & 0.073 & 0.171 & 0.073 \\
+\hline
+\end{tabular}
+
+$H(y|x_2=1) = 0$, so no need to explore this branch \\
+
+We therefore pick $x_1$ as the next feature to split. Again, we recompute the following info gains for each of the remaining features: \\
+$H(y|x_2=0, x_1=0) = 1$ \\
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+$Variable$ & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ \\
+\hline
+Info Gain & - & - & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+
+$H(y|x_2=0, x_1=1) = 0$, so no need to explore this branch \\
+
+We therefore pick $x_4$ as the next feature to split and are done because the information gain is 1, meaning that feature $x_4$ perfectly explains this branch of the data $(x_1=0,x_2=0)$.
+This gives us the following decision tree:
+
+\includegraphics[height=\textwidth]{\figdir/problem2_tree}
+
 \end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -141,14 +167,19 @@ $K=1$ & $K=5$ & $K=10$ & $K=50$ \\
 \item 
 \begin{figure}[H] \centering
 Given the following MSEs: \\
+\vspace{-1in}
 \includegraphics[width=6.5in]{\figdir/prob2b} \\
+\vspace{-2in}
 I would recommend choosing $K=16$ since the MSE appears to increase for the test set after this value.
 \end{figure}
 
 \item 
+\vspace{-1in}
 \begin{figure}[H] \centering
 Given the following MSEs: \\
+\vspace{-1in}
 \includegraphics[width=6.5in]{\figdir/prob2c} \\
+\vspace{-1in}
 I would recommend choosing $K=32$ since the MSE appears to increase for the test set after this value.
 \end{figure}
 
