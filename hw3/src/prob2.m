@@ -19,5 +19,23 @@ XB = X(Y>0,:); YB=Y(Y>0); % 1 vs 2
 %%saveas(gcf, '../figs/prob2a_1v2', 'pdf');
 %close
 
-%%%% PART B %%%%
+%%%% PART C %%%%
+step = 0.05;
+nIter = 100;
 
+%pc = perceptClassify(XB,YB, step,nIter);
+
+pc = perceptClassify(XA,YA, step, nIter);
+
+%%%% PART D %%%%
+% xs = XA;
+% %xs = XB;
+% ys = YA.*2-1;
+% %ys = (YB-1).*2-1;
+
+% lc = linearRegress(xs, ys);
+
+% pc = perceptClassify();
+% weights = getWeights(lc);
+% pc = setWeights(pc, weights);
+% plot2DLinear(pc, xs, ys);

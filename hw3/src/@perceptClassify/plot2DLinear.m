@@ -12,13 +12,15 @@ function plot2DLinear(obj, Xtrain, Ytrain)
 
   % Plot each class in a different color
   hold on;
-  scatter(X(Y==0,1), X(Y==0,2));
-  scatter(X(Y==1,1), X(Y==1,2));
+  i0 = find(Ytrain==-1); i1 = find(Ytrain==1);
+  scatter(Xtrain(i0,1), Xtrain(i0,2));
+  scatter(Xtrain(i1,1), Xtrain(i1,2));
 
   %   along with the linear decision boundary of the predictor
+  xs = linspace(min(Xtrain(:,1)), max(Xtrain(:,1)), 200);
+  ys = (xs.*wts(2)+wts(1))./(-wts(3));
+  plot(xs, ys);
 
   hold off;
-  close
 
   drawnow;  % ensures plot is updated immediately 
-
