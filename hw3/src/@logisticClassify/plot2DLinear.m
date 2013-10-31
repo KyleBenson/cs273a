@@ -6,7 +6,7 @@ function plot2DLinear(obj, Xtrain, Ytrain)
   [n,d] = size(Xtrain);
   if (d~=2) error('Sorry -- plot2DLinear only works on 2D data...'); end;
 
-  wts = obj.wts;  % parameters of the linear classifier:
+  wts = obj.theta;  % parameters of the linear classifier:
   
   %yhat = sign(  wts(1) + x1 * wts(2) + x2 * wts(3) )
 

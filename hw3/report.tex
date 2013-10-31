@@ -102,6 +102,22 @@ classes 1 vs. 2 \\
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
+\subsection*{Problem 3: Logistic Regresion}
+
+\begin{enumerate}[(a)]
+\item Done
+\item See (c)
+
+
+\item $\frac{dJ(\theta)}{d\theta} = \frac{d}{d\theta} (\frac{1}{m} \sum_{j} -y^{(j)} \log\sigma(\theta x^{(j)T}) - (1-y^{(j)}) \log(1 - \sigma(\theta x^{(j)T})))$ \\
+
+$= \frac{1}{m} \sum_{j} -\frac{d}{d\theta}y^{(j)} \log\sigma(\theta x^{(j)T}) - \frac{d}{d\theta}(1-y^{(j)}) \log(1 - \sigma(\theta x^{(j)T})))$ \\
+$= \frac{1}{m} \sum_{j} -\frac{\frac{d}{d\theta} \sigma(\theta x^{(j)T}) y^{(j)}}{\sigma(\theta x^{(j)T})} - y^{(j)} \frac{-\frac{d}{d\theta} \sigma(\theta x^{(j)T}) y^{(j)}}{1 - \sigma(\theta x^{(j)T})}$ \\
+
+\end{enumerate}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 %
 %\subsection*{Problem 2: Decision Trees}
 %

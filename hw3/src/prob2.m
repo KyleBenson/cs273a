@@ -20,8 +20,8 @@ XB = X(Y>0,:); YB=Y(Y>0); % 1 vs 2
 %close
 
 %%%% PART C %%%%
-step = 0.05;
-nIter = 100;
+step = 0.01;
+nIter = 1e3;
 
 %pc = perceptClassify(XB,YB, step,nIter);
 
