@@ -6,9 +6,9 @@ X = iris(:,1:2); Y=iris(:,end);
 XA = X(Y<2,:); YA=Y(Y<2); % 0 vs 1
 XB = X(Y>0,:); YB=Y(Y>0); % 1 vs 2
 
-lc = logisticClassify(X1,Y1, .1, 1000);
-%lc = logisticClassify(XB,YB, .000001, 500);
-%lc = logisticClassify(XA,YA, .000001, 500);
+%lc = logisticClassify(X1,Y1, .1, 1000);
+lc = logisticClassify(XB,YB, .1, 500);
+%lc = logisticClassify(XA,YA, .10, 1000);
 
 degree = 2;
 
@@ -20,4 +20,4 @@ transform = @(x) rescale( fpoly(x,degree,false), M,S);
 
 %plotClassify2D( lc, XA,YA, transform);
 
-plotClassify2D( lc, XtrP,YA, transform);
+%plotClassify2D( lc, XtrP,YA, transform);

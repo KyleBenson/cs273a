@@ -13,7 +13,7 @@ function plot2DLinear(obj, Xtrain, Ytrain)
   % Plot each class in a different color
   clf;
   hold on;
-  i0 = find(Ytrain==-1); i1 = find(Ytrain==1);
+  i0 = find(Ytrain==0); i1 = find(Ytrain==1);
   scatter(Xtrain(i0,1), Xtrain(i0,2));
   scatter(Xtrain(i1,1), Xtrain(i1,2));
 

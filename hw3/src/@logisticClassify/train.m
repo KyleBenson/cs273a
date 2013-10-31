@@ -51,12 +51,13 @@ while (~done)
     grad = alpha + sum_term;
 
     %(yhati - Ytrain(i))*Xtrain1(i,:);            % Gradient-like perceptron update rule
-    obj.theta = obj.theta - stepi * grad;                   % Take a step down the gradient
+    obj.theta = obj.theta - stepi * grad                   % Take a step down the gradient
   end;
 
   % Compute current error values (missclassification rate)
   err(iter)  = mean( (Ytrain~=round((1+exp(-Xtrain1*obj.theta')).^(-1))));
   % Compute regularized logistic negative log likelihood loss
+log(exp(-Xtrain1*obj.theta').^(-1))
   nlll_first_term = -Ytrain'*log((1+exp(-Xtrain1*obj.theta')).^(-1));
   nlll_second_term = -(1-Ytrain')*log(1-(1+exp(-Xtrain1* ...
                                               obj.theta')).^(-1));
@@ -66,8 +67,7 @@ while (~done)
   % Make plots, if desired
   if (plotFlag),
   fig(1);
-  semilogx(1:iter, err(1:iter),'g-', ...
-           1:iter, nlll(1:iter), 'r-'); %plot regularized logistic negative log likelihood loss
+  semilogx(           1:iter, nlll(1:iter), 'r-', 1:iter, err(1:iter),'g-'); %plot regularized logistic negative log likelihood loss
 
   fig(2); switch d,                              % Plots to help with visualization
       case 1, plot1DLinear(obj,Xtrain,Ytrain);      %  for 1D data we can display the data and the function
@@ -82,3 +82,5 @@ while (~done)
   prev_loss = nlll(iter);
   iter = iter + 1;
 end;
+
+nlll
