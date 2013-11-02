@@ -25,6 +25,9 @@ close(gcf);
 
 %% done part b
 
+
+% part c
+
 % gather up MSE's
 testMSEs = [];
 trainingMSEs = [];
@@ -39,19 +42,21 @@ for degree=degrees
 
     xs = [0:.01:2]';
     xsP = fpoly(xs, degree, false);
+    xsP = rescale(xsP);
     ysP = predict( lr, xsP );
 
     % test on training data
     YtrP = predict (lr, XtrP);
-    trainingMSEs = [trainingMSEs mean((YtrP - Ytr).^2)]
+    trainingMSEs = [trainingMSEs mean((YtrP - Ytr).^2)];
     % test on test data
     YteP = predict (lr, XteP);
-    testMSEs = [testMSEs mean((YteP - Yte).^2)]
+    testMSEs = [testMSEs mean((YteP - Yte).^2)];
 
     % plot the learned prediction functions
     hold on;
+    axis([-2 3 -150 100]);
     plot(xs, ysP);
-    scatter(Xtr, YtrP);
+    scatter(Xtr, Ytr);
     hold off;
     saveas(gcf, ['../figs/prob1c_deg' int2str(degree)], 'pdf');
     close(gcf);
@@ -65,7 +70,7 @@ ylabel('MSE');
 legend('training data', 'test data');
 saveas(gcf, '../figs/prob1c_mse', 'pdf');
 
-% part c
+% part d
 % vary alpha with degree 18
 degree = 18;
 testMSEs = [];

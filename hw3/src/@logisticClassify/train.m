@@ -6,12 +6,12 @@ function obj = train(obj, Xtrain, Ytrain, stepsize, maxSteps)
 %     maxSteps = maximum number of steps before stopping
 %
 alpha = 0;
-losstol = 0.000001;
+losstol = 0.0000000001;
 
 if (nargin < 5) maxSteps = 5000;  end;  % max number of iterations
 if (nargin < 4) stepsize = .01;   end;  % gradient descent step size
 
-plotFlag = 1;                    % with plotting
+plotFlag = 0;                    % with plotting
 
 [n,d] = size(Xtrain);            % d = dimension of data; n =
                                  % number of training data
@@ -24,6 +24,7 @@ if (length(obj.classes)~=2) error('Y values must be binary!'); end;  % check cor
 Ytrain = Ytrain-max(Ytrain) + 1;             % convert Y to 0/1 for ease
 
 obj.theta = randn(1,d+1);          % initialize weights randomly
+obj.theta = obj.theta * 0;
 
 % Outer loop of stochastic gradient descent:
 iter=1;                          % iteration #
@@ -37,38 +38,38 @@ while (~done)
   % Step size evolution
   %stepi = stepsize/iter;              % logistic method:
   %decreasing harmonically
-  stepi = 1/iter;              % logistic method: decreasing harmonically
+  %stepi = stepsize/iter;              % logistic method: decreasing harmonically
+  stepi = stepsize;
 
   % Stochastic gradient update (one pass)
   for i=1:n,  % for each data example,
-    resp = (1+exp(-Xtrain1(i,:)*obj.theta')).^(-1);                       % compute logistic response
-    yhati = round(resp);                                 % and prediction for Xi
-
     % compute gradient of regularized logistic negative log
     % likelihood loss function
-    logit_term = (1+exp(-Xtrain1*obj.theta')).^(-1);
-    sum_term = (logit_term - Ytrain)' * Xtrain1;
-    grad = alpha + sum_term;
+    resp = Xtrain1(i,:)*obj.theta';
+    logit_term = (-1/(exp(resp)+1));
+    grad = Xtrain1(i,:) * (logit_term - Ytrain(i)+1) / n;
 
-    %(yhati - Ytrain(i))*Xtrain1(i,:);            % Gradient-like perceptron update rule
-    obj.theta = obj.theta - stepi * grad                   % Take a step down the gradient
+    % was trying to do this in full vector form, but was causing issues...
+    %logit_term = (1+exp(-Xtrain1*obj.theta')).^(-1);
+    %sum_term = (logit_term - Ytrain)' * Xtrain1;
+    %grad = alpha + sum_term/n;
+    obj.theta = obj.theta - stepi * grad;                   % Take a step down the gradient
   end;
 
   % Compute current error values (missclassification rate)
   err(iter)  = mean( (Ytrain~=round((1+exp(-Xtrain1*obj.theta')).^(-1))));
+  
   % Compute regularized logistic negative log likelihood loss
-log(exp(-Xtrain1*obj.theta').^(-1))
   nlll_first_term = -Ytrain'*log((1+exp(-Xtrain1*obj.theta')).^(-1));
-  nlll_second_term = -(1-Ytrain')*log(1-(1+exp(-Xtrain1* ...
-                                              obj.theta')).^(-1));
+  nlll_second_term = -(1-Ytrain')*log(1-(1+exp(-Xtrain1*obj.theta')).^(-1));
   alpha_term = alpha*sum(obj.theta.^2);
   nlll(iter) = n^(-1)*(nlll_first_term + nlll_second_term) + alpha_term;
 
   % Make plots, if desired
   if (plotFlag),
   fig(1);
-  semilogx(           1:iter, nlll(1:iter), 'r-', 1:iter, err(1:iter),'g-'); %plot regularized logistic negative log likelihood loss
-
+  semilogx(1:iter, nlll(1:iter), 'r-', 1:iter, err(1:iter),'g-'); %plot regularized logistic negative log likelihood loss
+  legend('neg log-L loss', 'error');
   fig(2); switch d,                              % Plots to help with visualization
       case 1, plot1DLinear(obj,Xtrain,Ytrain);      %  for 1D data we can display the data and the function
       case 2, plot2DLinear(obj,Xtrain,Ytrain);      %  for 2D data, just the data and decision boundary
@@ -83,4 +84,5 @@ log(exp(-Xtrain1*obj.theta').^(-1))
   iter = iter + 1;
 end;
 
-nlll
+err(end)
+nlll(end)

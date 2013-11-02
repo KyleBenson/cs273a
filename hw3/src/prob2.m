@@ -25,17 +25,19 @@ nIter = 1e3;
 
 %pc = perceptClassify(XB,YB, step,nIter);
 
-pc = perceptClassify(XA,YA, step, nIter);
+%pc = perceptClassify(XA,YA, step, nIter);
 
 %%%% PART D %%%%
-% xs = XA;
-% %xs = XB;
-% ys = YA.*2-1;
-% %ys = (YB-1).*2-1;
+xs = XA;
+%xs = XB;
+ys = YA.*2-1;
+%ys = (YB-1).*2-1;
 
-% lc = linearRegress(xs, ys);
+lc = linearRegress(xs, ys);
 
-% pc = perceptClassify();
-% weights = getWeights(lc);
-% pc = setWeights(pc, weights);
-% plot2DLinear(pc, xs, ys);
+pc = perceptClassify(xs, ys);
+weights = getWeights(lc);
+pc = setWeights(pc, weights);
+plot2DLinear(pc, xs, ys);
+
+error = err(pc, xs, ys)
