@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/mltools/!svn/ver/6/@treeClassify
+END
+err.m
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mltools/!svn/ver/1/@treeClassify/err.m
+END
+auc.m
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mltools/!svn/ver/5/@treeClassify/auc.m
+END
+predict.m
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mltools/!svn/ver/1/@treeClassify/predict.m
+END
+train.m
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mltools/!svn/ver/7/@treeClassify/train.m
+END
+treeClassify.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mltools/!svn/ver/1/@treeClassify/treeClassify.m
+END
+confusion.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mltools/!svn/ver/5/@treeClassify/confusion.m
+END
