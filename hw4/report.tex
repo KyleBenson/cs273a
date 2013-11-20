@@ -70,7 +70,20 @@ TBD
 
 \begin{enumerate}[(a)]
 
-\item TBD
+\item We would have $2^d + 2^{d+1} - 2$ parameters, unless you consider that each split node only has 1 parameter due to us only having one feature to choose from, in which case it would only have $2^{d+1} - 1$ parameters. \\
+
+So the VC dimension would be ??????
+
+\item This learner has 4 parameters: the feature index to split on (domain: 1,2), the threshold value (domain: real numbers), and the two choices of which classes to predict (domain: -1, +1). \\
+Example showing that we can shatter 3 points:
+\vspace{2in}
+
+blah
+
+\item This learner still has 4 parameters, as we've only changed the domain of the feature index to split on. \\
+Example showing how we can now shatter 4 points:
+\vspace{2in}
+
 %\item Polynomial training errors:
 %\begin{figure}[h!] \centering
 %\begin{tabular}{cccc}
