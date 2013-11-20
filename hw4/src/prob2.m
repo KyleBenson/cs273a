@@ -17,7 +17,7 @@ A = bsxfun(@times, XA, YA);
 A = -1*[YA A];
 b = -1*ones(N,1);
 
-theta = quadprog(H,zeros(dim,1),A,b,[],[],-100000*ones(dim,1),100000*ones(dim,1));
+theta = quadprog(H,zeros(dim,1),A,b,[],[],-100000*ones(dim,1),100000*ones(dim,1))
 
 % separate parameters
 %b = theta(1);
@@ -40,14 +40,26 @@ Aeq = YA';
 %beq = zeros(dim,1);
 beq = [0];
 
-theta = quadprog(H,f,[],[],Aeq, beq,zeros(N,1),100000*ones(N,1))
+theta = quadprog(H,f,[],[],Aeq, beq,zeros(N,1),100000*ones(N,1));
 
 % theta is a N-dim vector of alpha weights,
 % so we need to extract the actual theta parameters from it
-%TODO
+realTheta = theta.*YA;
+realTheta = XA'*realTheta;
+
+supportVectors = XA(round(theta) ~= 0, :);
 
 pc = perceptClassify(XA, YA);
-pc = setWeights(pc, [0 theta']');
-plotClassify2D(pc, XA, YA);
+realTheta = [-17.2697 realTheta']';
+pc = setWeights(pc, realTheta);
+
+close
+close
+close
+
+hold on;
+plot2DLinear(pc, XA, YA);
+plot(supportVectors(:,1), supportVectors(:,2), 'ro', 'linewidth', 3);
+hold off;
 
 end;

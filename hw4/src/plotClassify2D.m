@@ -14,7 +14,7 @@ close(f);
 % Evaluate each point of feature space and predict the class
 X1 = linspace(ax(1),ax(2),N); X1sp=X1'*ones(1,N);
 X2 = linspace(ax(3),ax(4),N); X2sp=ones(N,1)*X2;
-Xfeat = [X1sp(:),X2sp(:)]
+Xfeat = [X1sp(:),X2sp(:)];
 
 % preprocess / create feature vector if necessary
 if (nargin > 3) Xfeat = pre(Xfeat); end;

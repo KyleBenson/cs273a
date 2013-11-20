@@ -5,7 +5,7 @@ function obj = train(obj, Xtrain, Ytrain, stepsize, maxSteps)
 %     stepsize = step size for gradient descent ("learning rate")
 %     maxSteps = maximum number of steps before stopping
 %
-if (nargin < 5) maxSteps = 5000;  end;  % max number of iterations
+if (nargin < 5) maxSteps = 50;  end;  % max number of iterations
 if (nargin < 4) stepsize = .01;   end;  % gradient descent step size
 
 plotFlag = 1;                    % with plotting
