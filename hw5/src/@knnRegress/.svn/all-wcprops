@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/mltools/!svn/ver/5/@knnRegress
+END
+rmse.m
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mltools/!svn/ver/1/@knnRegress/rmse.m
+END
+setK.m
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/mltools/!svn/ver/4/@knnRegress/setK.m
+END
+_predict.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mltools/!svn/ver/1/@knnRegress/_predict.m
+END
+predict.m
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mltools/!svn/ver/5/@knnRegress/predict.m
+END
+train.m
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/mltools/!svn/ver/5/@knnRegress/train.m
+END
+knnRegress.m
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mltools/!svn/ver/4/@knnRegress/knnRegress.m
+END
+mae.m
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mltools/!svn/ver/1/@knnRegress/mae.m
+END
+mse.m
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/mltools/!svn/ver/1/@knnRegress/mse.m
+END

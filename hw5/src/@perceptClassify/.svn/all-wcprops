@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify
+END
+display.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/display.m
+END
+setWeights.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/setWeights.m
+END
+err.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/err.m
+END
+getWeights.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/getWeights.m
+END
+predict.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/predict.m
+END
+train.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/train.m
+END
+plot1DLinear.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/plot1DLinear.m
+END
+plot2DLinear.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/plot2DLinear.m
+END
+perceptClassify.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mltools/!svn/ver/1/tmp/@perceptClassify/perceptClassify.m
+END
