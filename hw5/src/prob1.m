@@ -1,4 +1,4 @@
-problem = 'd'
+problem = 'c'
 
 iris=load('data/iris.txt');
 X = iris(:,1:2); Y=iris(:,end);
@@ -17,9 +17,9 @@ K=20
 
 elseif problem == 'c'
 
-K=20
-method='min'; %single-link
-%method='max'; %complete-link
+K=5
+%method='min'; %single-link
+method='max'; %complete-link
 [assign, join] = agglomCluster(XA, K, method);
 
 elseif problem == 'd'

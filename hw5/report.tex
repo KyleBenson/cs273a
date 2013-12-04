@@ -58,32 +58,14 @@
 
 \centerline{\Large Kyle Benson}
 \centerline{CS 273A - Machine Learning: Fall 2013}
-\centerline{Homework 2}
+\centerline{Homework 5}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection*{Problem 0: Team names}
-
-TBD
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection*{Problem 1: VC Dimension}
+\subsection*{Problem 1: Basics of Clustering}
 
 \begin{enumerate}[(a)]
 
-\item We would have $2^d + 2^{d+1} - 2$ parameters, unless you consider that each split node only has 1 parameter due to us only having one feature to choose from, in which case it would only have $2^{d+1} - 1$ parameters. \\
-
-So the VC dimension would be ??????
-
-\item This learner has 4 parameters: the feature index to split on (domain: 1,2), the threshold value (domain: real numbers), and the two choices of which classes to predict (domain: -1, +1). \\
-Example showing that we can shatter 3 points:
-\vspace{2in}
-
-blah
-
-\item This learner still has 4 parameters, as we've only changed the domain of the feature index to split on. \\
-Example showing how we can now shatter 4 points:
-\vspace{2in}
-
+\item TODO
 %\item Polynomial training errors:
 %\begin{figure}[h!] \centering
 %\begin{tabular}{cccc}
@@ -103,39 +85,77 @@ Example showing how we can now shatter 4 points:
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\subsection*{Problem 2: Support Vector Machines}
+\subsection*{Problem 2: k-means Clustering on Text}
 
 \begin{enumerate}[(a)]
-\item Output thetas (starting with b) are: \textbf{-17.2697, 6.3572, -5.3693} \\
-\includegraphics[width=.45\textwidth]{\figdir/prob2a}
-\item I found the support vectors by extracting the values from the data at the same point the $\alpha_i = 1$.  They are circled in red in the plot below. \\
-	\includegraphics[width=.4\textwidth]{\figdir/prob2b}
+\item Done
+\item Cost function results: 2.2505, 2.2706, 2.1498, 2.1769, 2.6815 \\
+Cluster 1 has 22 articles \\
+Most common words: y2k, 2000, system, computer, saturday, problem, problems, government, news, city, \\
+Cluster 2 has 3 articles \\
+Most common words: games, million, olympic, trump, city, griffey, donald, federal, age, stadium, \\
+Cluster 3 has 1 articles \\
+Most common words: air, airlines, friday, traffic, aviation, commercial, midnight, 2000, canceled, control, \\
+Cluster 4 has 2 articles \\
+Most common words: party, candidate, clinton, early, national, primary, republican, system, bad, bond, \\
+Cluster 5 has 4 articles \\
+Most common words: algeria, islamic, war, americans, country, army, europe, front, independence, called, \\
+Cluster 6 has 3 articles \\
+Most common words: white, mall, president, guests, house, clinton, dinner, crowd, millennium, room, \\
+Cluster 7 has 5 articles \\
+Most common words: greene, buildings, architecture, city, architects, hobson, maurice, kansas, landmark, company, \\
+Cluster 8 has 1 articles \\
+Most common words: sun, celebration, morning, saturday, town, american, hall, light, line, maine, \\
+Cluster 9 has 3 articles \\
+Most common words: y2k, saturday, problems, 2000, koskinen, computers, country, horn, operations, reported, \\
+Cluster 10 has 1 articles \\
+Most common words: patriots, deal, free, million, coaches, game, season, carroll, cap, coach, \\
+Cluster 11 has 1 articles \\
+Most common words: beamon, mother, book, jump, school, black, bob, died, family, sports, \\
+Cluster 12 has 1 articles \\
+Most common words: central, clouds, snow, states, valley, weather, week, air, band, century, \\
+Cluster 13 has 1 articles \\
+Most common words: look, mrs, feel, head, president, believe, story, women, clinton, considered, \\
+Cluster 14 has 1 articles \\
+Most common words: market, percent, growth, stocks, analysts, 2000, inflation, stock, 1999, economic, \\
+Cluster 15 has 21 articles \\
+Most common words: test, square, times, end, millennium, houston, fireworks, city, midnight, 2000, \\
+Cluster 16 has 148 articles \\
+Most common words: team, game, season, york, players, century, american, political, yeltsin, games, \\
+Cluster 17 has 5 articles \\
+Most common words: yards, game, bowl, texas, arkansas, season, yard, offensive, line, touchdown, \\
+Cluster 18 has 2 articles \\
+Most common words: susan, y2k, smiths, farm, call, food, going, jim, real, thing, \\
+Cluster 19 has 2 articles \\
+Most common words: bowden, coach, football, florida, field, players, head, assistant, practice, ann, \\
+Cluster 20 has 1 articles \\
+Most common words: hong, kong, 000, evening, horse, millennium, chinese, eve, midnight, party, \\
+
+We can see that most of the clusters seem to have some sort of common theme between the words, though in some cases we may need to look at more words to discern what that is.
+Interestingly, we see that some clusters should obviously be split again as they seem to have more than one theme, such as cluster 16 that seems to have documents about both sports as well as Russian politicians.
+
+\item The documents seem to form somewhat coherent groups, though in some cases they seem to be members of clusters shared with other coherent groups.  
+These do seem to be the best clusters for the documents given the spread of common words, though as previously mentioned the clusters could be rearranged to improve this match.
+
+\item The sum of squared distances is \textbf{1.7278}, which is significantly lower than the previous clustering.
+Now, the clusters seem to better match the documents contained within as the cluster containing documents about Russia seems to contain \emph{only} documents about Russia.
+However, there certainly exists a problem with too many clusters as many clusters contain only 1 or a few articles, such as the sports article about Cal State Northridge.
+
+%\includegraphics[width=.45\textwidth]{\figdir/prob2a}
 \end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\subsection*{Problem 3: Bagging with Decision Trees}
+\subsection*{Problem 3: EigenFaces}
 
 \begin{enumerate}[(a)]
-\item Training error: 3.6219e-04 \\
-Test error: 0.1565 \\
-Settings: I uses nMin(0), infinite depth, minScore(.001), and all available features for splitting.
-
-\item \includegraphics[width=.45\textwidth]{\figdir/prob3b}
-
-\item We should believe that we are overfitting with these parameters because they introduce more complexity and, for example, learn training data completely with deep enough trees. \\
-\includegraphics[width=.45\textwidth]{\figdir/prob3c}
-
-\item In this figure we see that 
-\includegraphics[width=.45\textwidth]{\figdir/prob3d}
+\item TODO
 \end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\subsection*{Problem 4: Boosting}
+\subsection*{Problem 4: Project}
 
-\begin{enumerate}[(a)]
-\item TBD
-\end{enumerate}
+Yessir!
 
 \end{document}
