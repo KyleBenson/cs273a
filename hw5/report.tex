@@ -65,7 +65,46 @@
 
 \begin{enumerate}[(a)]
 
-\item TODO
+\item \vspace{-1in}\includegraphics[width=.45\textwidth]{\figdir/prob1a.pdf}
+
+\item They don't always find the same solutions, but here is a run for $k={5,20}$
+\vspace{-1in}
+\begin{figure}[h!] \centering
+\begin{tabular}[c]{cc}
+%\vspace{-1in}
+\includegraphics[width=.45\textwidth]{\figdir/prob1b_5.pdf}
+\includegraphics[width=.45\textwidth]{\figdir/prob1b_20.pdf}
+\end{tabular}
+\end{figure}
+
+\vspace{3in} %newpage
+
+\item
+%\vspace{-1in}
+\begin{figure}[h!] \centering
+\begin{tabular}[t]{c|c|c}
+
+linkage & $k=20$ & $k=5$ \\
+
+complete  &\includegraphics[width=.45\textwidth]{\figdir/prob1c_max_20.pdf} & \includegraphics[width=.45\textwidth]{\figdir/prob1c_max_5.pdf}
+\\
+
+single &
+\includegraphics[width=.45\textwidth]{\figdir/prob1c_min_20.pdf} &
+\includegraphics[width=.45\textwidth]{\figdir/prob1c_min_5.pdf}
+\end{tabular}
+\end{figure}
+
+\item
+%\vspace{-1in}
+\begin{figure}[h!] \centering
+\begin{tabular}{cc}
+$k=5$ & $k=20$ \\
+\includegraphics[width=.45\textwidth]{\figdir/prob1d_5.pdf} &
+\includegraphics[width=.45\textwidth]{\figdir/prob1d_20.pdf}
+\end{tabular}
+\end{figure}
+
 %\item Polynomial training errors:
 %\begin{figure}[h!] \centering
 %\begin{tabular}{cccc}
@@ -88,8 +127,10 @@
 \subsection*{Problem 2: k-means Clustering on Text}
 
 \begin{enumerate}[(a)]
-\item Done
+\item $SSDs = 2.2505$
 \item Cost function results: 2.2505, 2.2706, 2.1498, 2.1769, 2.6815 \\
+
+\item
 Cluster 1 has 22 articles \\
 Most common words: y2k, 2000, system, computer, saturday, problem, problems, government, news, city, \\
 Cluster 2 has 3 articles \\
@@ -131,6 +172,7 @@ Most common words: bowden, coach, football, florida, field, players, head, assis
 Cluster 20 has 1 articles \\
 Most common words: hong, kong, 000, evening, horse, millennium, chinese, eve, midnight, party, \\
 
+
 We can see that most of the clusters seem to have some sort of common theme between the words, though in some cases we may need to look at more words to discern what that is.
 Interestingly, we see that some clusters should obviously be split again as they seem to have more than one theme, such as cluster 16 that seems to have documents about both sports as well as Russian politicians.
 
@@ -149,8 +191,51 @@ However, there certainly exists a problem with too many clusters as many cluster
 \subsection*{Problem 3: EigenFaces}
 
 \begin{enumerate}[(a)]
-\item Done
-\item 
+
+\item Done.
+\item Done.
+
+\item MSE for $K=1...10$
+\includegraphics[width=.45\textwidth]{\figdir/prob3c.pdf}
+
+\item First 5 principle directions (minus in first row):
+\begin{figure}[h!] \centering
+\begin{tabular}{ccccc}
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_minus1.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_minus2.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_minus3.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_minus4.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_minus5.pdf} \\
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_plus1.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_plus2.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_plus3.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_plus4.pdf} &
+\hspace{-.5in}\includegraphics[width=.25\textwidth]{\figdir/prob3d_plus5.pdf} \\
+\end{tabular}
+\end{figure}
+
+\vspace{6in}
+
+\item Here is one of the 25 faces I looked at:
+
+\includegraphics[width=.45\textwidth]{\figdir/prob3e.pdf}
+
+\item
+\begin{figure}[h!] \centering
+\begin{tabular}{cccc}
+face & 1:5 & 1:10 & 1:50 \\
+
+face 42 & \includegraphics[width=.25\textwidth]{\figdir/prob3f_face42_K5.pdf} &
+\includegraphics[width=.25\textwidth]{\figdir/prob3f_face42_K10.pdf} &
+\includegraphics[width=.25\textwidth]{\figdir/prob3f_face42_K50.pdf} \\
+
+face 620 &
+\includegraphics[width=.25\textwidth]{\figdir/prob3f_face620_K5.pdf} &
+\includegraphics[width=.25\textwidth]{\figdir/prob3f_face620_K10.pdf} &
+\includegraphics[width=.25\textwidth]{\figdir/prob3f_face620_K50.pdf} \\
+\end{tabular}
+\end{figure}
+
 \end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %

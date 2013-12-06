@@ -1,12 +1,12 @@
-problem = 'e'
+problem = 'f'
 
 X = load('data/faces.txt'); % load face dataset
 
 % subtract mean to make data zero-mean
-mu = mean(mean(X));
-X = X - mu;
+mu = mean(X);
+X = X - repmat(mu, size(X,1), 1);
 
-[U, S, V] = svds(X, 50);
+[U, S, V] = svds(X, 500);
 W = U*S;
 sizew = size(W)
 sizev = size(V)
@@ -62,14 +62,14 @@ end;
 
 elseif problem == 'f'
 
-for K = [5 10 50]
+for K = [5 10 50 500]
     for faceIdx = [42 620]
         img = W(faceIdx,1:K)*V(:,1:K)';
         img = reshape(img,[24 24]);
         imagesc(img); axis square; colormap gray;
         title(['Face ' int2str(faceIdx) ' Principal Directions 1:' int2str(K)]);
-        saveas(gcf, ['../figs/prob3f_face' int2str(faceIdx) '_K' int2str(K)], 'pdf');
-        pause(2);
+        %saveas(gcf, ['../figs/prob3f_face' int2str(faceIdx) '_K' int2str(K)], 'pdf');
+        %pause(2);
     end;
 end;
 

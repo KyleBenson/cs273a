@@ -1,4 +1,4 @@
-problem = 'c'
+problem = 'b'
 
 iris=load('data/iris.txt');
 X = iris(:,1:2); Y=iris(:,end);
